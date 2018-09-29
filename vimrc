@@ -98,13 +98,14 @@ Plug 'https://github.com/octol/vim-cpp-enhanced-highlight.git'          "还未�
 call plug#end()
 
 "NERDTree 插件配置
-let NERDTreeWinPos='right'
+let NERDTreeWinPos='left'
 let NERDTreeWinSize=31                                                  " 设置NERDTree界面宽度为31
 let NERDTreeChDirMode=2                                                 " 可修改root路径
 let NERDTreeShowBookmarks=1                                             " 显示Bookmarks标签
 let NERDTreeStatusline='NERDTree'                                       " 显示Bookmarks标签
 "tarbar插件配置
-let g:tagbar_left = 1                                                   " 使tarbar栏目在左侧
+"let g:tagbar_left = 1                                                   " 使tarbar栏目在左侧
+let g:tagbar_right = 1                                                   " 使tarbar栏目在左侧
 "YouCompleteMe 插件配置
 let g:ycm_server_python_interpreter='/usr/bin/python'
 let g:ycm_autoclose_preview_window_after_insertion=1
@@ -202,8 +203,10 @@ map <F7> :ClangFormat<CR>
 " 开闭目录树窗口
 map <F10> :NERDTreeToggle<CR>
 " 开闭函数结构窗口
-map <F12> :TagbarToggle<CR>
+map <F8> :TagbarToggle<CR>
 map <F9> :CCtoggle<CR>
+
+map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " 英语查询单词
 map <Leader>w :w<CR>
